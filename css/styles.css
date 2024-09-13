@@ -624,13 +624,12 @@ button {
   color: var(--dark);
 }
 
-/* .order-form {
-  display: flex;
-  flex-direction: column;
-} */
-
 .label-container {
   margin-bottom: 8px;
+}
+
+.label-container.comment {
+  margin-bottom: 16px;
 }
 
 .label,
@@ -677,48 +676,45 @@ button {
 
 .textarea {
   padding-left: 16px;
-  max-height: 120px;
+  height: 120px;
   resize: none;
+  color: var(--modal-overlay);
 }
 
 .textarea::placeholder {
   color: var(--modal-overlay);
 }
 
-.checkbox {
-  height: 16px;
-  width: 16px;
-  margin-right: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
 .terms-form {
-  padding-top: 16px;
-  padding-bottom: 24px;
   display: flex;
   flex-direction: row;
   gap: 8px;
+  margin-bottom: 24px;
 }
 
-.icon-checkbox-container {
+.custom-checkbox {
   width: 16px;
   height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
-  border: 1px solid var(--modal-overlay);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  fill: transparent;
 }
 
-/* .checkbox:checked + .icon.checkbox-icon {
-  fill: var(--pressed-state);
-} */
-
-/* .checkbox[type="checkbox"]:checked ~ label .icon.checkbox-icon {
-  background-color: var(--pressed-state);
+.custom-checkbox:checked {
+  background: var(--pressed-state);
   border: none;
-  fill: var(--accent);
-} */
+  fill: var(--light);
+}
+
+.privacy-link {
+  color: var(--primary-brand);
+}
 
 .terms-button {
   display: block;
@@ -733,6 +729,7 @@ button {
   border: none;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0 auto;
+  letter-spacing: 0.04em;
 }
 
 .terms-button:hover,
