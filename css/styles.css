@@ -706,7 +706,7 @@ button {
   fill: transparent;
 }
 
-.checkbox:checked ~ .custom-checkbox {
+.checkbox:checked ~ .label .custom-checkbox {
   background: var(--pressed-state);
   border: none;
   fill: var(--light);
