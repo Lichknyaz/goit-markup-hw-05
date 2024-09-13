@@ -480,8 +480,7 @@ button {
   margin-right: 80px;
 }
 
-.subscribe-form {
-  /* display: flex; */
+.subscribe-container {
   gap: 12px;
 }
 
@@ -491,9 +490,10 @@ button {
   font-weight: 500;
 }
 
-.subscribe-container {
+.subscribe-form {
   display: flex;
   flex-direction: row;
+  gap: 24px;
 }
 
 .subscribe-btn {
@@ -525,14 +525,15 @@ button {
   width: 264px;
   height: 40px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  background-color: var(--dark);
-  margin-right: 24px;
+  background-color: transparent;
+  font-size: 12px;
+  color: var(--white);
+  padding: 8px 16px;
 }
 
 .subscribe-email::placeholder {
   font-size: 12px;
   color: var(--white);
-  padding: 8px 16px;
 }
 
 /* #endregion */
@@ -545,13 +546,16 @@ button {
   border-radius: 4px;
   border: none;
   width: 408px;
-  max-height: 584px;
+  min-height: 584px;
   display: flex;
   flex-direction: column;
-  transition: opacity 250ms ease-in-out;
-  position: fixed;
+
+  position: absolute;
   transform: translate(-50%, -50%);
-  padding: 24px;
+  padding: 72px 24px 24px 24px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .backdrop {
@@ -564,6 +568,8 @@ button {
   height: 100%;
   width: 100%;
   background-color: var(--modal-overlay);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
@@ -580,9 +586,13 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: none;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  margin-left: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  padding: 0;
 }
 
 .close-btn:hover,
@@ -601,7 +611,7 @@ button {
 }
 
 .form-header {
-  margin-top: 24px;
+  margin-bottom: 16px;
   font-weight: 500;
 }
 
